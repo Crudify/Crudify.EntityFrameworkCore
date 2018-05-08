@@ -13,24 +13,19 @@ namespace Crudify.EntityFrameworkCore
     {
         public readonly DbContext DbContext;
         public readonly ILogger Logger;
-        public bool KeepDbContextInitialized { get; set; } = true;
-
-        public DbContextCrudRepository(DbContext dbContext)
-        {
-            DbContext = dbContext ?? throw new ArgumentNullException(nameof(dbContext));
-        }
+        public bool KeepDbContextOpenOnDispose { get; set; } = true;
 
         public DbContextCrudRepository(DbContext dbContext, ILogger logger)
         {
-            Logger = logger ?? throw new ArgumentNullException(nameof(logger));
             DbContext = dbContext ?? throw new ArgumentNullException(nameof(dbContext));
+            Logger = logger ?? throw new ArgumentNullException(nameof(logger));
         }
 
-        public DbContextCrudRepository(DbContext dbContext, ILogger logger, bool keepDbContextInitialized)
+        public DbContextCrudRepository(DbContext dbContext, ILogger logger, bool keepDbContextOpenOnDispose)
         {
-            Logger = logger ?? throw new ArgumentNullException(nameof(logger));
             DbContext = dbContext ?? throw new ArgumentNullException(nameof(dbContext));
-            KeepDbContextInitialized = keepDbContextInitialized;
+            Logger = logger ?? throw new ArgumentNullException(nameof(logger));
+            KeepDbContextOpenOnDispose = keepDbContextOpenOnDispose;
         }
 
         public DbContextCrudRepository(DbContextCrudRepositoryOptions dbContextCrudRepositoryOptions)
@@ -40,7 +35,7 @@ namespace Crudify.EntityFrameworkCore
 
             DbContext = dbContextCrudRepositoryOptions.DbContext;
             Logger = dbContextCrudRepositoryOptions.Logger;
-            KeepDbContextInitialized = dbContextCrudRepositoryOptions.DisposeOfDbContextOnDispose;
+            KeepDbContextOpenOnDispose = dbContextCrudRepositoryOptions.KeepDbContextOpenOnDispose;
         }
 
         public TCrudEntityId Create(TCrudEntity crudEntity)
@@ -101,7 +96,7 @@ namespace Crudify.EntityFrameworkCore
 
         public void Dispose()
         {
-            if (!KeepDbContextInitialized)
+            if (!KeepDbContextOpenOnDispose)
             {
                 DbContext.Dispose();
             }

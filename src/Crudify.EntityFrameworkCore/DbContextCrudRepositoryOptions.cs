@@ -7,6 +7,6 @@ namespace Crudify.EntityFrameworkCore
     {
         public DbContext DbContext { get; set; }
         public ILogger Logger { get; set; }
-        public bool DisposeOfDbContextOnDispose { get; set; } = true;
+        public bool KeepDbContextOpenOnDispose { get; set; } = true;
     }
 }

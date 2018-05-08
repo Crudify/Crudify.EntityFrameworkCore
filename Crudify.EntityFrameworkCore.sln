@@ -9,7 +9,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{6939FCED
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "build", "build", "{F1E5B27B-D7EB-47D1-890D-92493DB4089B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Crudify.EntityFrameworkCore", "src\Crudify.EntityFrameworkCore\Crudify.EntityFrameworkCore.csproj", "{67024BAD-8BEB-4015-813B-29827560DD7F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Crudify.EntityFrameworkCore", "src\Crudify.EntityFrameworkCore\Crudify.EntityFrameworkCore.csproj", "{67024BAD-8BEB-4015-813B-29827560DD7F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Crudify.EntityFrameworkCoreTests", "Crudify.EntityFrameworkCoreTests\Crudify.EntityFrameworkCoreTests.csproj", "{3385C31D-8508-439B-BAAB-2D30426E5C3D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,12 +23,17 @@ Global
 		{67024BAD-8BEB-4015-813B-29827560DD7F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{67024BAD-8BEB-4015-813B-29827560DD7F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{67024BAD-8BEB-4015-813B-29827560DD7F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3385C31D-8508-439B-BAAB-2D30426E5C3D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3385C31D-8508-439B-BAAB-2D30426E5C3D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3385C31D-8508-439B-BAAB-2D30426E5C3D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3385C31D-8508-439B-BAAB-2D30426E5C3D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{67024BAD-8BEB-4015-813B-29827560DD7F} = {F2A26488-7C74-4620-9ED7-4FDFC2F1952F}
+		{3385C31D-8508-439B-BAAB-2D30426E5C3D} = {6939FCED-CAB9-4487-89EA-B24BE462EE43}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {4E8AD1C4-A33D-474C-BD65-6949C67D057C}
