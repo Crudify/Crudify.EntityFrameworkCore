@@ -1,4 +1,4 @@
-﻿using Crudify.Core.Interfaces;
+﻿using Crudify.Core;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using System;

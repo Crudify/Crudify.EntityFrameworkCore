@@ -1,4 +1,4 @@
-﻿using Crudify.Core.Interfaces;
+﻿using Crudify.Core;
 
 namespace Crudify.EntityFrameworkCoreTests.Model
 {

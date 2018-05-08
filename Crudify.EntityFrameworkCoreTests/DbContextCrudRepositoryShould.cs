@@ -4,8 +4,6 @@ using Microsoft.Extensions.Logging;
 using Shouldly;
 using System;
 using System.Linq;
-using System.Collections.Generic;
-using System.Text;
 using System.Threading.Tasks;
 using Xunit;
 
@@ -77,6 +75,7 @@ namespace Crudify.EntityFrameworkCoreTests
                 dbContextCrudRepository.KeepDbContextOpenOnDispose.ShouldBe(keepDbContextOpenOnDispose);
             }
         }
+
         [Fact]
         public void SetPropertiesCorrectlyWhenUsingConstructorC()
         {
@@ -102,7 +101,6 @@ namespace Crudify.EntityFrameworkCoreTests
         [Fact]
         public void CreateAndReturnAnId()
         {
-
             using (var dbContext = TestDbContext.CreateInMemoryNoTrackingTestDbContext())
             {
                 using (var dbContextCrudRepository = new DbContextCrudRepository<Bar, ulong>(
@@ -201,7 +199,6 @@ namespace Crudify.EntityFrameworkCoreTests
             }
         }
 
-
         [Fact]
         public async Task CreateAsyncAndAllowSubsequentReadAsync()
         {
@@ -211,7 +208,6 @@ namespace Crudify.EntityFrameworkCoreTests
                     logger: loggerMock.Object,
                     dbContext: dbContext))
                 {
-
                     var newUser = new Bar() { Stool = Guid.NewGuid().ToString() };
 
                     var newUserId = await dbContextCrudRepository.CreateAsync(newUser);
@@ -313,7 +309,6 @@ namespace Crudify.EntityFrameworkCoreTests
                     logger: loggerMock.Object,
                     dbContext: dbContext))
                 {
-
                     var newUser = new Bar() { Stool = "Before" };
                     var newUserId = await dbContextCrudRepository.CreateAsync(newUser);
                     newUserId.ShouldNotBe<ulong>(0);
@@ -340,7 +335,6 @@ namespace Crudify.EntityFrameworkCoreTests
                     logger: loggerMock.Object,
                     dbContext: dbContext))
                 {
-
                     var newUser = new Bar() { Stool = "Before" };
                     var newUserId = await dbContextCrudRepository.CreateAsync(newUser);
                     newUserId.ShouldNotBe<ulong>(0);
@@ -361,7 +355,6 @@ namespace Crudify.EntityFrameworkCoreTests
                     logger: loggerMock.Object,
                     dbContext: dbContext))
                 {
-
                     var newUser = new Bar() { Stool = "Before" };
                     var newUserId = await dbContextCrudRepository.CreateAsync(newUser);
                     newUserId.ShouldNotBe<ulong>(0);

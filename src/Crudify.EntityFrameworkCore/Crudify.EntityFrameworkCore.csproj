@@ -12,7 +12,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Crudify.Core" Version="0.0.2" />
+    <PackageReference Include="Crudify.Core" Version="0.0.17-Alpha" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="2.0.2" />
   </ItemGroup>
 
