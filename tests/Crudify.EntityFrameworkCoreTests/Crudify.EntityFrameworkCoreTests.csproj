@@ -19,7 +19,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\src\Crudify.EntityFrameworkCore\Crudify.EntityFrameworkCore.csproj" />
+    <ProjectReference Include="..\..\src\Crudify.EntityFrameworkCore\Crudify.EntityFrameworkCore.csproj" />
   </ItemGroup>
 
 </Project>
